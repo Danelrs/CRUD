@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Clientes</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Género</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+        {% for client in clients %}
+        <tr>
+            <td>{{ client.id }}</td>
+            <td>{{ client.name }}</td>
+            <td>{{ client.last_name }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.phone_number }}</td>
+            <td>{{ client.id_gender }}</td>
+            <td>{{ client.id_address }}</td>
+            <td>
+                <a href="/clients/delete/{{ client.id }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Agregar Cliente</h2>
+    <form action="/clients/add" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="text" name="last_name" placeholder="Apellido" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone_number" placeholder="Teléfono" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <select name="id_gender">
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+        </select>
+        <select name="id_address">
+            <option value="1">Dirección 1</option>
+            <option value="2">Dirección 2</option>
+        </select>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
