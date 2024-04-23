@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación eliminar</title>
+</head>
+<body>
+    <div class="form-main">
+        <div class="form-conte">
+            <div class="box">
+                <form action="/deletec/{{ clients.0 }}" method="POST">
+                    <h3>¿Está seguro que desea eliminar al cliente {{ clients.1 }} {{ clients.2 }}?</h3>
+                    <button type="submit" class="btn">Confirmar</button>
+                </form>
+                <a href="/" ><button class="btn">Cancelar</button></a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -21,15 +21,16 @@
         </tr>
         {% for client in clients %}
         <tr>
-            <td>{{ client.id }}</td>
-            <td>{{ client.name }}</td>
-            <td>{{ client.last_name }}</td>
-            <td>{{ client.email }}</td>
-            <td>{{ client.phone_number }}</td>
-            <td>{{ client.id_gender }}</td>
-            <td>{{ client.id_address }}</td>
+            <td>{{ client.1 }}</td>
+            <td>{{ client.2 }}</td>
+            <td>{{ client.3 }}</td>
+            <td>{{ client.4 }}</td>
+            <td>{{ client.5 }}</td>
+            <td>{{ client.6 }}</td>
+            <td>{{ client.7 }}</td>
             <td>
-                <a href="/clients/delete/{{ client.id }}">Eliminar</a>
+                <a href="/visualizaredit/{{client.0}}">Editar</a> | 
+                <a href="/delete/{{client.0}}">Eliminar</a>
             </td>
         </tr>
         {% endfor %}

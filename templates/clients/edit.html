@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cliente</title>
+</head>
+<body>
+    <h2>Editar Cliente</h2>
+    <form action="/edit/{{clients.0}}" method="POST">
+        <input type="text" name="name" placeholder="Nombre" value="{{ clients.1 }}" required>
+        <input type="text" name="last_name" placeholder="Apellido" value="{{ clients.2 }}" required>
+        <input type="email" name="email" placeholder="Email" value="{{ clients.3 }}" required>
+        <input type="tel" name="phone_number" placeholder="Teléfono" value="{{ clients.4 }}" required>
+        <input type="password" name="password" placeholder="Contraseña" value="{{ clients.5 }}" required>
+        <select name="id_gender">
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+        </select>
+        <select name="id_address">
+            <option value="1">Dirección 1</option>
+            <option value="2">Dirección 2</option>
+        </select>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>
